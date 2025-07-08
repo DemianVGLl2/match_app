@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "826470047108",
+    "project_id": "matchapp-fe3ca",
+    "storage_bucket": "matchapp-fe3ca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826470047108:android:108e4a9ad6352d619391d1",
+        "android_client_info": {
+          "package_name": "com.up.upchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsAwWd0asGdYtEm1TuoR1KK9kVITl0Oy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
