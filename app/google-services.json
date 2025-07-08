@@ -7,12 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:826470047108:android:108e4a9ad6352d619391d1",
+        "mobilesdk_app_id": "1:826470047108:android:01c0c8b60961914b9391d1",
         "android_client_info": {
-          "package_name": "com.up.upchat"
+          "package_name": "com.example.matchapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "826470047108-4jcrutpsug2cmqlm2s6rkr6k3b8f6opp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBsAwWd0asGdYtEm1TuoR1KK9kVITl0Oy0"
@@ -20,7 +25,41 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826470047108-4jcrutpsug2cmqlm2s6rkr6k3b8f6opp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826470047108:android:108e4a9ad6352d619391d1",
+        "android_client_info": {
+          "package_name": "com.up.upchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826470047108-4jcrutpsug2cmqlm2s6rkr6k3b8f6opp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsAwWd0asGdYtEm1TuoR1KK9kVITl0Oy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826470047108-4jcrutpsug2cmqlm2s6rkr6k3b8f6opp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
