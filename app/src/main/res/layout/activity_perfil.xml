@@ -158,10 +158,10 @@
 
     <!-- Imagen redonda (perfil) -->
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgPerfil"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/ic_user"
+        android:id="@+id/imgUPChatBot"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/pantera_bot"
         android:layout_margin="12dp"
         app:layout_constraintBottom_toTopOf="@id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -9,7 +9,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 
 class Login : AppCompatActivity() {
 
@@ -21,14 +23,14 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_pagina_de_inicio)
         enableEdgeToEdge()
-        setContentView(R.layout.login)
 
         auth = FirebaseAuth.getInstance()
 
-        emailEditText = findViewById(R.id.emailAdress)
-        passwordEditText = findViewById(R.id.password)
-        loginButton = findViewById(R.id.principal)
+        emailEditText = findViewById(R.id.inputUsuario)
+        passwordEditText = findViewById(R.id.inputPassword)
+        loginButton = findViewById(R.id.btnInicio)
 
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString()
@@ -39,7 +41,7 @@ class Login : AppCompatActivity() {
             }
         }
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_layout)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -52,6 +54,10 @@ class Login : AppCompatActivity() {
                 emailEditText.error = "Correo es requerido"
                 false
             }
+            !email.endsWith("@up.edu.mx") -> {
+                emailEditText.error = "Correo no válido"
+                false
+            }
             password.isEmpty() -> {
                 passwordEditText.error = "Contraseña es requerida"
                 false
@@ -60,32 +66,46 @@ class Login : AppCompatActivity() {
                 passwordEditText.error = "La contraseña debe tener al menos 6 caracteres"
                 false
             }
+
             else -> true
         }
     }
 
     private fun signInUser(email: String, password: String) {
         loginButton.isEnabled = false
+        emailEditText.isEnabled = false
+        passwordEditText.isEnabled = false
         loginButton.text = "Iniciando sesión..."
 
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 loginButton.isEnabled = true
+                emailEditText.isEnabled = true
+                passwordEditText.isEnabled = true
                 loginButton.text = "Iniciar sesión"
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-                    //navigateToMainActivity()
+                    navigateToMainActivity()
                 }
                 else {
-                    val errorMessage = "Error de inicio de sesión: ${task.exception?.message}"
-                    Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+                    try {
+                        throw task.exception!!
+                    } catch (e: FirebaseAuthInvalidUserException) {
+                        emailEditText.error = "Correo incorrecto"
+                        emailEditText.requestFocus()
+                    } catch (e: FirebaseAuthInvalidCredentialsException) {
+                        passwordEditText.error = "Contraseña incorrecta"
+                        passwordEditText.requestFocus()
+                    } catch (e: Exception) {
+                        Toast.makeText(this, "Error de inicio de sesión: ${e.message}", Toast.LENGTH_LONG).show()
+                    }
                 }
             }
     }
 
     private fun navigateToMainActivity() {
-        val intent = Intent(this, Menu::class.java)
+        val intent = Intent(this, MainMenu::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
         finish()
@@ -98,18 +118,5 @@ class Login : AppCompatActivity() {
         if (currentUser != null) {
             navigateToMainActivity()
         }
-    }
-
-    private fun createUser(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val user = auth.currentUser
-                    Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                }
-                else {
-                    Toast.makeText(this, "Error en el registro: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                }
-            }
     }
 }

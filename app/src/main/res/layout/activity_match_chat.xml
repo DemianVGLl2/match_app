@@ -5,6 +5,182 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Match_Chat">
+    tools:context=".Match_Chat"
+    android:background="#F9F9F9">
+
+    <!-- Toolbar como ActionBar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="#C39C6F"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Logo central -->
+    <ImageView
+        android:id="@+id/centerLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:padding="16dp"
+        android:background="@drawable/circle_bg"
+        android:scaleType="centerInside"
+        android:src="@drawable/logo_arbol"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Chips de intereses alrededor -->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipCocina"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#C39C6F"
+        app:chipBackgroundColor="#8B1E3F"
+        android:text="Cocina"
+        app:layout_constraintBottom_toTopOf="@id/centerLogo"
+        app:layout_constraintStart_toStartOf="@id/centerLogo"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipHistoria"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#C39C6F"
+        app:chipBackgroundColor="#8B1E3F"
+        android:text="Historia"
+        app:layout_constraintBottom_toTopOf="@id/centerLogo"
+        app:layout_constraintEnd_toEndOf="@id/centerLogo"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipArte"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Arte"
+        android:textColor="#C39C6F"
+        app:chipBackgroundColor="#8B1E3F"
+        app:layout_constraintBottom_toTopOf="@+id/centerLogo"
+        app:layout_constraintEnd_toStartOf="@+id/centerLogo"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@id/centerLogo"
+        app:layout_constraintTop_toBottomOf="@+id/chipCocina" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipVideojuegos"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Videojuegos"
+        android:textColor="#C39C6F"
+        app:chipBackgroundColor="#8B1E3F"
+        app:layout_constraintBottom_toTopOf="@+id/centerLogo"
+        app:layout_constraintEnd_toEndOf="@id/centerLogo"
+        app:layout_constraintStart_toEndOf="@+id/centerLogo"
+        app:layout_constraintTop_toBottomOf="@+id/chipHistoria" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipLectura"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textColor="#C39C6F"
+        app:chipBackgroundColor="#8B1E3F"
+        android:text="Lectura"
+        app:layout_constraintEnd_toStartOf="@+id/chipFotografia"
+        app:layout_constraintStart_toStartOf="@id/centerLogo"
+        app:layout_constraintTop_toBottomOf="@id/centerLogo" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipFotografia"
+        style="@style/Widget.MaterialComponents.Chip.Choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="#C39C6F"
+        app:chipBackgroundColor="#8B1E3F"
+        android:text="Fotografía"
+        app:layout_constraintEnd_toEndOf="@id/centerLogo"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/chipLectura"
+        app:layout_constraintTop_toBottomOf="@id/centerLogo" />
+
+
+    <!-- Imagen de perfil redonda -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgUPChatBot"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="12dp"
+        android:src="@drawable/pantera_bot"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Barra de navegación inferior -->
+    <LinearLayout
+    android:id="@+id/bottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="#C39C6F"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="8dp"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <!-- Chat -->
+        <ImageButton
+            android:id="@+id/nav_chat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="Chat"
+            android:maxWidth="32dp"
+            android:maxHeight="32dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_chat"
+            android:tint="#8B1E3F" />
+
+    <!-- Inicio -->
+        <ImageButton
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="Inicio"
+            android:maxWidth="32dp"
+            android:maxHeight="32dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_home"
+            android:tint="#FFFFFF" />
+
+    <!-- Perfil (activo) -->
+    <ImageButton
+        android:id="@+id/nav_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:contentDescription="Perfil"
+        android:maxWidth="32dp"
+        android:maxHeight="32dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_user"
+        android:tint="#FFFFFF"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

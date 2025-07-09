@@ -20,51 +20,84 @@
     app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Input de Usuario -->
-    <EditText
-        android:id="@+id/inputUsuario"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:hint="Usuario"
-        android:backgroundTint="#30000000"
-        android:textColor="#FFFFFF"
-        android:padding="12dp"
-        android:background="@drawable/edittext_background"
-        app:layout_constraintTop_toBottomOf="@id/logoImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintWidth_percent="0.7" />
 
     <!-- Input de Contraseña -->
+
+    <!-- Botón de Inicio -->
+
     <EditText
         android:id="@+id/inputPassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/edittext_background"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        android:textColor="#FFFFFF"
         android:padding="12dp"
-        android:background="@drawable/edittext_background"
-        app:layout_constraintTop_toBottomOf="@id/inputUsuario"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputUsuario"
         app:layout_constraintWidth_percent="0.7" />
 
-    <!-- Botón de Inicio -->
+    <TextView
+        android:id="@+id/textPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="276dp"
+        android:text="Contraseña"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/inputPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputUsuario" />
+
     <Button
         android:id="@+id/btnInicio"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#C39C6F"
         android:text="Inicio"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#C39C6F"
-        app:layout_constraintTop_toBottomOf="@id/inputPassword"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputPassword"
         app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/textUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="219dp"
+        android:layout_marginEnd="299dp"
+        android:text="Usuario"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/inputUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputUsuario"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/edittext_background"
+        android:backgroundTint="#30000000"
+        android:hint="Usuario"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+        app:layout_constraintWidth_percent="0.7" />
 
     <!-- Botón de soporte (WhatsApp) -->
     <ImageButton
