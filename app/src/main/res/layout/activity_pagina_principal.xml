@@ -85,18 +85,21 @@
         app:layout_constraintWidth_percent="0.65" />
 
     <!-- Imagen de perfil redonda -->
+
+    <!-- Barra de navegación inferior -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgUPChatBot"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/pantera_bot"
         app:civ_border_color="#FFFFFF"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Barra de navegación inferior -->
     <LinearLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
@@ -120,7 +123,7 @@
             android:maxHeight="32dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_chat"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <!-- Inicio -->
         <ImageButton
@@ -134,7 +137,7 @@
             android:maxHeight="32dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_home"
-            android:tint="#8B1E3F" />
+            app:tint="#8B1E3F" />
 
         <!-- Perfil (activo) -->
         <ImageButton
@@ -148,7 +151,13 @@
             android:maxHeight="32dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_user"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/chatbotOverlayContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

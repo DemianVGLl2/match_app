@@ -85,7 +85,7 @@ class Login : AppCompatActivity() {
                 loginButton.text = "Iniciar sesión"
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
                     navigateToMainActivity()
                 }
                 else {

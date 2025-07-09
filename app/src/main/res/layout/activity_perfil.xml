@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
@@ -13,9 +14,9 @@
         android:layout_margin="16dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,53 +28,53 @@
                 android:id="@+id/avatar"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
-                android:src="@drawable/ic_user"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_user" />
 
             <!-- Nombre -->
             <TextView
                 android:id="@+id/nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre\nApellido"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_toEndOf="@id/avatar"
+                android:layout_alignTop="@id/avatar"
                 android:layout_marginStart="12dp"
-                android:layout_alignTop="@id/avatar" />
+                android:layout_toEndOf="@id/avatar"
+                android:text="Nombre\nApellido"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <!-- Carrera y matrícula -->
             <TextView
                 android:id="@+id/carrera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LIC. EN INGENIERÍA EN ANIMACIÓN DIGITAL\n000000"
-                android:textSize="12sp"
                 android:layout_below="@id/nombre"
-                android:layout_alignStart="@id/nombre" />
+                android:layout_alignStart="@id/nombre"
+                android:text="LIC. EN INGENIERÍA EN ANIMACIÓN DIGITAL\n000000"
+                android:textSize="12sp" />
 
             <!-- Código de barras (imagen decorativa) -->
             <ImageView
                 android:id="@+id/barcode"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:src="@drawable/barcode"
-                android:layout_alignParentBottom="true"
                 android:layout_alignStart="@id/avatar"
-                android:layout_marginTop="8dp" />
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/barcode" />
 
             <!-- Botón de tipo de usuario -->
             <Button
                 android:id="@+id/btnTipo"
                 android:layout_width="wrap_content"
                 android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:backgroundTint="#8B1E3F"
                 android:text="Alumno"
                 android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:backgroundTint="#8B1E3F"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true" />
+                android:textSize="12sp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
@@ -82,14 +83,14 @@
         android:id="@+id/cardCarrera"
         android:layout_width="0dp"
         android:layout_height="140dp"
-        android:layout_marginTop="8dp"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="#C39C6F"
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
-        app:cardBackgroundColor="#C39C6F"
-        app:layout_constraintTop_toBottomOf="@id/cardPerfil"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/cardPerfil">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -102,8 +103,8 @@
                 android:layout_height="wrap_content"
                 android:text="Estatus de la Carrera"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imgCarrera"
@@ -111,8 +112,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tituloCarrera"
                 android:layout_marginTop="12dp"
-                android:src="@drawable/progreso"
-            android:scaleType="fitCenter" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/progreso" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
@@ -121,15 +122,15 @@
         android:id="@+id/cardFinanzas"
         android:layout_width="0dp"
         android:layout_height="140dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="80dp"
-        android:layout_marginHorizontal="16dp"
+        app:cardBackgroundColor="#C39C6F"
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
-        app:cardBackgroundColor="#C39C6F"
-        app:layout_constraintTop_toBottomOf="@id/cardCarrera"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/cardCarrera">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -142,8 +143,8 @@
                 android:layout_height="wrap_content"
                 android:text="Registro Financiero"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imgFinanzas"
@@ -151,8 +152,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tituloFinanzas"
                 android:layout_marginTop="12dp"
-                android:src="@drawable/finanzas"
-                android:scaleType="fitCenter" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/finanzas" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
@@ -161,8 +162,8 @@
         android:id="@+id/imgUPChatBot"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@drawable/pantera_bot"
         android:layout_margin="12dp"
+        android:src="@drawable/pantera_bot"
         app:layout_constraintBottom_toTopOf="@id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -171,11 +172,11 @@
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:orientation="horizontal"
         android:background="#C39C6F"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingHorizontal="12dp"
         android:paddingVertical="8dp"
-        android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <!-- Chat -->
@@ -185,12 +186,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_chat"
             android:contentDescription="Chat"
-            android:tint="#FFFFFF"
-            android:scaleType="centerInside"
+            android:maxWidth="32dp"
             android:maxHeight="32dp"
-            android:maxWidth="32dp" />
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_chat"
+            android:tint="#FFFFFF" />
 
         <!-- Inicio -->
         <ImageButton
@@ -199,12 +200,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_home"
             android:contentDescription="Inicio"
-            android:tint="#FFFFFF"
-            android:scaleType="centerInside"
+            android:maxWidth="32dp"
             android:maxHeight="32dp"
-            android:maxWidth="32dp" />
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_home"
+            android:tint="#FFFFFF" />
 
         <!-- Perfil (activo) -->
         <ImageButton
@@ -213,12 +214,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_user"
             android:contentDescription="Perfil"
-            android:tint="#8B1E3F"
-            android:scaleType="centerInside"
+            android:maxWidth="32dp"
             android:maxHeight="32dp"
-            android:maxWidth="32dp" />
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_user"
+            android:tint="#8B1E3F" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
