@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8B1E3F"
+    tools:context=".MainActivity">
+
+    <!-- Logo del árbol -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Logo"
+        android:src="@drawable/logo_arbol"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Input de Usuario -->
+    <EditText
+        android:id="@+id/inputUsuario"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:hint="Usuario"
+        android:backgroundTint="#30000000"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <!-- Input de Contraseña -->
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintTop_toBottomOf="@id/inputUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <!-- Botón de Inicio -->
+    <Button
+        android:id="@+id/btnInicio"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="Inicio"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#C39C6F"
+        app:layout_constraintTop_toBottomOf="@id/inputPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <!-- Botón de soporte (WhatsApp) -->
+    <ImageButton
+        android:id="@+id/btnSoporte"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/whatsapp_background"
+        android:src="@drawable/ic_whatsapp"
+        android:contentDescription="Soporte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:scaleType="centerInside" />
+
+    <!-- Texto Soporte -->
+    <TextView
+        android:id="@+id/txtSoporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soporte"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSoporte"
+        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
