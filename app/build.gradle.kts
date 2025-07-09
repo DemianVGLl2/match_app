@@ -47,4 +47,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }
