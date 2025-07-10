@@ -54,4 +54,7 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation ("com.google.android.material:material:1.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
+
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.firebase:firebase-auth:22.3.0")
 }
