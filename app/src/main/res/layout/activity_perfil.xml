@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
     <!-- Tarjeta del perfil -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgUPChatBot"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="12dp"
+        android:src="@drawable/pantera"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardPerfil"
         android:layout_width="0dp"
         android:layout_height="180dp"
         android:layout_margin="16dp"
+        android:layout_marginBottom="33dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardCarrera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -68,7 +80,7 @@
             <Button
                 android:id="@+id/btnTipo"
                 android:layout_width="wrap_content"
-                android:layout_height="32dp"
+                android:layout_height="35dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:backgroundTint="#8B1E3F"
@@ -85,9 +97,11 @@
         android:layout_height="140dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="98dp"
         app:cardBackgroundColor="#C39C6F"
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardFinanzas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardPerfil">
@@ -100,8 +114,13 @@
             <TextView
                 android:id="@+id/tituloCarrera"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="113dp"
                 android:text="Estatus de la Carrera"
+                android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -113,7 +132,9 @@
                 android:layout_below="@id/tituloCarrera"
                 android:layout_marginTop="12dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/progreso" />
+                android:src="@drawable/progreso_carrera"
+                app:srcCompat="@drawable/progreso_carrera"
+                tools:srcCompat="@drawable/progreso_carrera" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
@@ -121,16 +142,15 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardFinanzas"
         android:layout_width="0dp"
-        android:layout_height="140dp"
+        android:layout_height="200dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="20dp"
         app:cardBackgroundColor="#C39C6F"
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardCarrera">
+        app:layout_constraintTop_toBottomOf="@+id/cardCarrera">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -139,33 +159,32 @@
 
             <TextView
                 android:id="@+id/tituloFinanzas"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="116dp"
+                android:layout_marginEnd="97dp"
                 android:text="Registro Financiero"
+                android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imgFinanzas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="119dp"
+                android:layout_height="133dp"
                 android:layout_below="@id/tituloFinanzas"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/finanzas" />
+                android:src="@drawable/cerdito"
+                app:srcCompat="@drawable/cerdito" />
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
     <!-- Imagen redonda (perfil) -->
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgUPChatBot"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_margin="12dp"
-        android:src="@drawable/pantera_bot"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Barra de navegación inferior -->
     <LinearLayout
@@ -190,7 +209,7 @@
             android:maxWidth="32dp"
             android:maxHeight="32dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_chat"
+            android:src="@drawable/mensaje_b"
             android:tint="#FFFFFF" />
 
         <!-- Inicio -->
@@ -204,7 +223,7 @@
             android:maxWidth="32dp"
             android:maxHeight="32dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_home"
+            android:src="@drawable/home_b"
             android:tint="#FFFFFF" />
 
         <!-- Perfil (activo) -->
@@ -218,7 +237,7 @@
             android:maxWidth="32dp"
             android:maxHeight="32dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/user_t"
             android:tint="#8B1E3F" />
     </LinearLayout>
 
