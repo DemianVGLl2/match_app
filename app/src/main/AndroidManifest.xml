@@ -10,9 +10,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/logo_arbol"
         android:label=""
-        android:roundIcon="@drawable/logo"
+        android:roundIcon="@drawable/logo_arbol"
         android:supportsRtl="true"
         android:theme="@style/Theme.MatchApp"
         tools:targetApi="31">
