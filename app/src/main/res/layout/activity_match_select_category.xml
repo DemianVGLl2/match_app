@@ -33,31 +33,34 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Chips de intereses alrededor -->
+
     <com.google.android.material.chip.Chip
         android:id="@+id/chipCocina"
         style="@style/Widget.MaterialComponents.Chip.Choice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#C39C6F"
-        app:chipBackgroundColor="#8B1E3F"
+        android:shadowColor="#3B1010"
         android:text="Cocina"
+        android:textColor="#FFFFFF"
+        app:chipBackgroundColor="#8B1E3F"
         app:layout_constraintBottom_toTopOf="@id/centerLogo"
         app:layout_constraintStart_toStartOf="@id/centerLogo"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chipHistoria"
         style="@style/Widget.MaterialComponents.Chip.Choice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#C39C6F"
-        app:chipBackgroundColor="#8B1E3F"
+        android:shadowColor="#3B1010"
         android:text="Historia"
+        android:textColor="#FFFFFF"
+        app:chipBackgroundColor="#8B1E3F"
         app:layout_constraintBottom_toTopOf="@id/centerLogo"
         app:layout_constraintEnd_toEndOf="@id/centerLogo"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.587" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chipArte"
@@ -65,8 +68,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:shadowColor="#3B1010"
         android:text="Arte"
-        android:textColor="#C39C6F"
+        android:textColor="#FFFFFF"
         app:chipBackgroundColor="#8B1E3F"
         app:layout_constraintBottom_toTopOf="@+id/centerLogo"
         app:layout_constraintEnd_toStartOf="@+id/centerLogo"
@@ -74,29 +78,36 @@
         app:layout_constraintStart_toStartOf="@id/centerLogo"
         app:layout_constraintTop_toBottomOf="@+id/chipCocina" />
 
+
+    <!-- Imagen de perfil redonda -->
     <com.google.android.material.chip.Chip
         android:id="@+id/chipVideojuegos"
         style="@style/Widget.MaterialComponents.Chip.Choice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:shadowColor="#3B1010"
         android:text="Videojuegos"
-        android:textColor="#C39C6F"
+        android:textColor="#FFFFFF"
         app:chipBackgroundColor="#8B1E3F"
         app:layout_constraintBottom_toTopOf="@+id/centerLogo"
         app:layout_constraintEnd_toEndOf="@id/centerLogo"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/centerLogo"
-        app:layout_constraintTop_toBottomOf="@+id/chipHistoria" />
+        app:layout_constraintTop_toBottomOf="@+id/chipHistoria"
+        app:layout_constraintVertical_bias="0.555" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chipLectura"
         style="@style/Widget.MaterialComponents.Chip.Choice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
-        android:textColor="#C39C6F"
-        app:chipBackgroundColor="#8B1E3F"
+        android:shadowColor="#3B1010"
         android:text="Lectura"
+        android:textColor="#FFFFFF"
+        app:chipBackgroundColor="#8B1E3F"
         app:layout_constraintEnd_toStartOf="@+id/chipFotografia"
         app:layout_constraintStart_toStartOf="@id/centerLogo"
         app:layout_constraintTop_toBottomOf="@id/centerLogo" />
@@ -107,22 +118,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textColor="#C39C6F"
-        app:chipBackgroundColor="#8B1E3F"
+        android:layout_marginTop="88dp"
+        android:shadowColor="#3B1010"
         android:text="Fotografía"
+        android:textColor="#FFFFFF"
+        app:chipBackgroundColor="#8B1E3F"
         app:layout_constraintEnd_toEndOf="@id/centerLogo"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toEndOf="@+id/chipLectura"
         app:layout_constraintTop_toBottomOf="@id/centerLogo" />
 
-
-    <!-- Imagen de perfil redonda -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgUPChatBot"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="12dp"
-        android:src="@drawable/pantera_bot"
+        android:src="@drawable/pantera"
         app:civ_border_color="#FFFFFF"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
@@ -151,7 +162,7 @@
             android:maxWidth="32dp"
             android:maxHeight="32dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_chat"
+            android:src="@drawable/mensaje_t"
             app:tint="#8B1E3F" />
 
         <!-- Inicio -->
@@ -165,7 +176,7 @@
             android:maxWidth="32dp"
             android:maxHeight="32dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_home"
+            android:src="@drawable/home_b"
             app:tint="#FFFFFF" />
 
         <!-- Perfil (activo) -->
@@ -179,7 +190,7 @@
             android:maxWidth="32dp"
             android:maxHeight="32dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/user_b"
             app:tint="#FFFFFF" />
     </LinearLayout>
 
