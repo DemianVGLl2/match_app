@@ -9,9 +9,9 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:src="@drawable/pantera_bot"
+        android:layout_gravity="top"
         android:layout_marginEnd="8dp"
-        android:layout_gravity="top" />
+        android:src="@drawable/pantera" />
 
     <LinearLayout
         android:layout_width="0dp"
