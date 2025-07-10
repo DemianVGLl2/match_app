@@ -19,19 +19,40 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <!-- Título -->
+
+    <!-- Línea separadora -->
+
+    <!-- Contenedor de video -->
+
+    <!-- Botón UP4U -->
+
+    <!-- Botón Portal UP -->
+
+    <WebView
+        android:id="@+id/videoContainer"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separador"
+        app:layout_constraintWidth_percent="0.85" />
+
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="44dp"
         android:text="Tutoriales / Manual de uso"
-        android:textColor="#A36B5F"
-        android:textSize="18sp"
+        android:textColor="#8A1E3F"
+        android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <!-- Línea separadora -->
     <View
         android:id="@+id/separador"
         android:layout_width="0dp"
@@ -43,50 +64,58 @@
         app:layout_constraintTop_toBottomOf="@id/titulo"
         app:layout_constraintWidth_percent="0.8" />
 
-    <!-- Contenedor de video -->
-    <WebView
-        android:id="@+id/videoContainer"
+    <View
+        android:id="@+id/separador2"
         android:layout_width="0dp"
-        android:layout_height="180dp"
+        android:layout_height="2dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="#A36B5F"
+        app:layout_constraintBottom_toTopOf="@+id/btnUp4U"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/separador"
-        app:layout_constraintWidth_percent="0.85" />
-
-    <!-- Botón UP4U -->
-    <Button
-        android:id="@+id/btnUp4U"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#8B1E3F"
-        android:elevation="4dp"
-        android:text="UP4U"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/videoContainer"
-        app:layout_constraintWidth_percent="0.65" />
-
-    <!-- Botón Portal UP -->
-    <Button
-        android:id="@+id/btnPortalUP"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#8B1E3F"
-        android:elevation="4dp"
-        android:text="Portal UP"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnUp4U"
-        app:layout_constraintWidth_percent="0.65" />
+        app:layout_constraintTop_toBottomOf="@+id/videoContainer"
+        app:layout_constraintWidth_percent="0.8" />
 
     <!-- Imagen de perfil redonda -->
 
     <!-- Barra de navegación inferior -->
+    <Button
+        android:id="@+id/btnPortalUP"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#8B1E3F"
+        android:elevation="4dp"
+        android:shadowColor="#321111"
+        android:text="Portal UP"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnUp4U"
+        app:layout_constraintWidth_percent="0.65" />
+
+    <Button
+        android:id="@+id/btnUp4U"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#8B1E3F"
+        android:elevation="4dp"
+        android:shadowColor="#321111"
+        android:text="UP4U"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/separador2"
+        app:layout_constraintWidth_percent="0.65" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgUPChatBot"
         android:layout_width="80dp"
@@ -94,7 +123,7 @@
         android:layout_margin="12dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/pantera_bot"
+        android:src="@drawable/pantera"
         app:civ_border_color="#FFFFFF"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
@@ -122,7 +151,7 @@
             android:maxWidth="32dp"
             android:maxHeight="32dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_chat"
+            android:src="@drawable/mensaje_b"
             app:tint="#FFFFFF" />
 
         <!-- Inicio -->
@@ -136,7 +165,7 @@
             android:maxWidth="32dp"
             android:maxHeight="32dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_home"
+            android:src="@drawable/home_t"
             app:tint="#8B1E3F" />
 
         <!-- Perfil (activo) -->
@@ -150,7 +179,7 @@
             android:maxWidth="32dp"
             android:maxHeight="32dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/user_b"
             app:tint="#FFFFFF" />
     </LinearLayout>
 
